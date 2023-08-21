@@ -28,8 +28,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -86,40 +85,58 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Column(
+        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 220, left: 17),
+            child:
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset('assets/images/ad.jpg', width: 140, height: 140,),
+                Text('Nhật Tân', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w300, fontFamily: 'Time New Roman'),),
+                Text('Android Developer Extraordinaire', style: TextStyle(fontSize: 17,color: Colors.green, fontWeight: FontWeight.w700),)
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+          ),
+
+          Container(
+            margin: EdgeInsets.only(top:170,left: 95, right: 140),
+            child:
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(Icons.call,color: Colors.red,),
+                Text('0947693462', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15, color: Colors.red,),),
+              ],
             ),
-          ],
-        ),
+          ),
+          Container(
+              margin: EdgeInsets.only(top:10,left: 95, right: 140),
+              child:
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(Icons.share,color: Colors.red,),
+                  Text('FB: Nhật Tân', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15, color: Colors.red,),),
+                ],
+              )
+          ),
+          Container(
+              margin: EdgeInsets.only(top:10,left: 95, right: 50),
+              child:
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(Icons.mark_email_unread_sharp,color: Colors.red,),
+                  Text('tannguyen110900@.gmail', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15, color: Colors.red,),),
+                ],
+              )
+          )
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
