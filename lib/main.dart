@@ -85,58 +85,70 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Container(
-            margin: EdgeInsets.only(top: 220, left: 17),
-            child:
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset('assets/images/ad.jpg', width: 140, height: 140,),
-                Text('Nhật Tân', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w300, fontFamily: 'Time New Roman'),),
-                Text('Android Developer Extraordinaire', style: TextStyle(fontSize: 17,color: Colors.green, fontWeight: FontWeight.w700),)
-              ],
-            ),
-          ),
+      body: SizedBox(
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Image.asset('assets/images/ad.jpg', width: 140, height: 140,),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  const Text('Nhật Tân',
+                    style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'Time New Roman'),),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  const Text('Android Developer Extraordinaire',
+                    style: TextStyle(
+                        fontSize: 17,color: Colors.green,
+                        fontWeight: FontWeight.w700),),
 
-          Container(
-            margin: EdgeInsets.only(top:170,left: 95, right: 140),
-            child:
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(Icons.call,color: Colors.red,),
-                Text('0947693462', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15, color: Colors.red,),),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-              margin: EdgeInsets.only(top:10,left: 95, right: 140),
-              child:
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.share,color: Colors.red,),
-                  Text('FB: Nhật Tân', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15, color: Colors.red,),),
-                ],
-              )
-          ),
-          Container(
-              margin: EdgeInsets.only(top:10,left: 95, right: 50),
-              child:
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.mark_email_unread_sharp,color: Colors.red,),
-                  Text('tannguyen110900@.gmail', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15, color: Colors.red,),),
-                ],
-              )
-          )
-        ],
-      ),
+
+            Container(
+              padding: const EdgeInsets.only(bottom: 40),
+              height: MediaQuery.of(context).size.height / 2.5,
+              child: Container(
+                color: Colors.white,
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Icon(Icons.call,color: Colors.red,),
+                            Icon(Icons.share,color: Colors.red,),
+                            Icon(Icons.mark_email_unread_sharp,color: Colors.red,),
+                          ],
+                        ),
+                        SizedBox(width: 15),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('0947693462', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.red,),),
+                            Text('FB: Nhật Tân', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.red,),),
+                            Text('tannguyen110900@.gmail', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.red,),),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),),
     );
   }
 }
